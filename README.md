@@ -5,7 +5,7 @@
     A Cloud app with ReactJs and TailwindCss. The main purpose of creating this app was using TailwindCss. In the app you can smooth scroll to the different pages.
   </p>
   <p>
-    I got the inspiration for this project from <a href="https://youtu.be/TVQnhcVFTVs">Code Commerce</a>
+    I got the inspiration for this project from <a href="https://www.youtube.com/channel/UCmT9TwcIb_yAe7-Uqhn3fBA">Code Commerce</a>
   </p>
 </div>
 <div>
@@ -23,4 +23,5 @@
   <p>
     Edit the codes and let me know if you have more knowledge or better ideas.
   </p>
+  <a href="https://mbcloud.netlify.app/">watch online</a>
 </div>
