@@ -1,13 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*::selection {
+  @apply bg-main text-white;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  @apply text-primary-dark;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* custom components */
+@layer components {
+  /* general */
+  .wrapper {
+    @apply p-3;
+  }
+  .wrapper-container {
+    @apply flex flex-col gap-3 max-w-[25rem] mx-auto sm:gap-4 sm:max-w-[900px];
+  }
+  .title {
+    @apply text-center uppercase text-2xl;
+  }
+  .heading {
+    @apply text-center text-3xl font-bold sm:text-4xl;
+  }
+  .desc {
+    @apply text-secondary-dark text-center font-medium sm:text-lg;
+  }
+  .card {
+    @apply border rounded-xl shadow-xl;
+  }
+
+  /* home.js */
+  .home-data-services p {
+    @apply flex items-center gap-1 text-slate-500 capitalize;
+  }
+  .home-data-services svg {
+    @apply text-main;
+  }
+
+  /* about.js */
+  .about-card-container div {
+    @apply card w-full p-2 py-4 shadow-lg;
+  }
+  .about-card-container div p:nth-child(1) {
+    @apply text-main text-4xl font-semibold;
+  }
+  .about-card-container div p:nth-child(2) {
+    @apply capitalize;
+  }
+
+  /* support.js */
+  .support-card-container div {
+    @apply card relative flex flex-col gap-2 p-3 pb-11 bg-white text-primary-dark rounded-lg;
+  }
+  .support-card-container div > svg {
+    @apply w-11 h-auto -mt-9 p-3 bg-main text-white rounded-md;
+  }
+  .support-card-container div h4 {
+    @apply capitalize text-2xl font-bold;
+  }
+  .support-card-container div p {
+    @apply text-secondary-dark font-medium;
+  }
+  .support-card-container div button {
+    @apply absolute flex items-center gap-1 bottom-0 left-0 w-full h-9 px-3  bg-main/10 text-main rounded-bl-md rounded-br-md transition text-left capitalize text-sm font-medium cursor-pointer hover:bg-main/30;
+  }
+
+  /* allInOne.js */
+  .aio-card-container > div {
+    @apply card flex items-start gap-1 p-2 transition shadow-md;
+  }
+  .aio-card-container > div div svg {
+    @apply w-5 h-auto text-emerald-600;
+  }
+  .aio-card-container > div div h5 {
+    @apply capitalize font-medium;
+  }
+  .aio-card-container > div div p {
+    @apply text-secondary-dark text-sm;
+  }
+
+  /* pricing.js */
+  .pricing-card-container > div {
+    @apply flex flex-col gap-7 max-w-[22rem] p-3 bg-white text-primary-dark border rounded-lg duration-300 shadow-xl hover:-translate-y-2 hover:shadow-black/25;
+  }
+  .pricing-card-container > div .pricing-header p {
+    @apply w-fit mb-3 px-2 bg-slate-400 text-slate-700 rounded-full uppercase text-sm font-medium;
+  }
+  .pricing-card-container > div .pricing-header h5 {
+    @apply text-5xl;
+  }
+  .pricing-card-container > div .pricing-header h5 span {
+    @apply text-lg;
+  }
+  .pricing-card-container > div .pricing-info {
+    @apply flex flex-col gap-3;
+  }
+  .pricing-card-container > div .pricing-info p {
+    @apply flex items-center gap-1;
+  }
+  .pricing-card-container > div .pricing-info p svg {
+    @apply w-5 h-auto;
+  }
+  .pricing-card-container > div button {
+    @apply w-full p-2 bg-slate-700 text-slate-200 rounded-md transition capitalize font-medium hover:bg-slate-600;
+  }
+
+  /* footer.js */
+  .footer-info-container div h6 {
+    @apply uppercase font-medium;
+  }
+  .footer-info-container div ul li {
+    @apply ml-3 text-slate-300 capitalize text-sm;
+  }
+}
+
+li.slide {
+  animation: slide 0.3s forwards;
+}
+@keyframes slide {
+  to {
+    transform: translateY(0);
+  }
 }
